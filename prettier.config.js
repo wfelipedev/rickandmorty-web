@@ -1,0 +1,7 @@
+module.exports = {
+  singleQuote: true,
+  tralingComma: 'all',
+  arrowParens: 'avoid',
+  semi: false,
+  endOfLine: 'auto',
+}
