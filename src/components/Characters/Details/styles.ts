@@ -26,6 +26,17 @@ export const CharInfo = styled.div`
 export const Field = styled.div`
   display: flex;
   flex-direction: row;
+
+  align-items: center;
+  gap: 0.3rem;
+
+  .title {
+    color: #333;
+  }
+
+  .info {
+    color: #838383;
+  }
 `
 
 export const Buttons = styled('div')`

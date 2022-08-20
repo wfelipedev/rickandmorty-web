@@ -97,27 +97,27 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
         <Styled.Image src={character.image} />
         <Styled.CharInfo>
           <Styled.Field>
-            <h3 className="label">Nome:</h3>
+            <h3 className="title">Nome:</h3>
             <h3 className="info">{character.name}</h3>
           </Styled.Field>
           <Styled.Field>
-            <h3 className="label">Status:</h3>{' '}
+            <h3 className="title">Status:</h3>{' '}
             <h3 className="info">{character.status}</h3>
           </Styled.Field>
           <Styled.Field>
-            <h3 className="label">Especie:</h3>{' '}
+            <h3 className="title">Especie:</h3>{' '}
             <h3 className="info">{character.species}</h3>
           </Styled.Field>
           <Styled.Field>
-            <h3 className="label">Quantidade de Episodios:</h3>
+            <h3 className="title">Quantidade de Episodios:</h3>
             <h3 className="info">{character.episodes?.length}</h3>
           </Styled.Field>
           <Styled.Field>
-            <h3 className="label">Origem:</h3>{' '}
+            <h3 className="title">Origem:</h3>{' '}
             <h3 className="info">{character.origin.name}</h3>
           </Styled.Field>
           <Styled.Field>
-            <h3 className="label">Data de criação:</h3>{' '}
+            <h3 className="title">Data de criação:</h3>{' '}
             <h3 className="info">
               {format(new Date(character.created), 'dd/MM/yyyy')}
             </h3>

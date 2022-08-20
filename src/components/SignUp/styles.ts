@@ -76,7 +76,6 @@ export const Container = styled('div')`
     margin-right: 0;
   }
 `
-
 export const Header = styled.div`
   margin: 0.8rem 0;
 
@@ -142,7 +141,7 @@ export const Button = styled(AntdButton)`
   }
 `
 
-export const SignUpLink = styled.div`
+export const BackLink = styled.div`
   display: flex;
   flex-direction: row;
 

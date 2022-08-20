@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import SignInComponent from '../../../components/SignIn'
+import SignUpComponent from '../../../components/SignUp'
 import { useAuth } from '../../../context/useAuth'
 
-const SignIn = () => {
+const Signup = () => {
   const { isAuthenticated } = useAuth()
   const navigate = useNavigate()
 
@@ -13,7 +13,7 @@ const SignIn = () => {
     }
   }, [isAuthenticated, navigate])
 
-  return <SignInComponent />
+  return <SignUpComponent />
 }
 
-export default SignIn
+export default Signup

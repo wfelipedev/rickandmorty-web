@@ -61,7 +61,8 @@ export const Header = styled(Layout.Header)`
 `
 
 export const Content = styled(Layout.Content)`
-  background: #f2f5ff;
+  height: 100%;
+  background: #f2f3f9;
 `
 
 export const Container = styled.div`

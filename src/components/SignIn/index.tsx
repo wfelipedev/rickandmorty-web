@@ -37,6 +37,7 @@ const SignInComponents = () => {
   return (
     <Styled.Main>
       <Styled.Container>
+        <Styled.Header>Sign In</Styled.Header>
         <form onSubmit={formik.handleSubmit}>
           <Styled.TextfieldContainer>
             <Form.Item
@@ -80,6 +81,9 @@ const SignInComponents = () => {
           >
             Entrar
           </Styled.Button>
+          <Styled.SignUpLink>
+            <a href="/signup">Cadastrar-se</a>
+          </Styled.SignUpLink>
         </form>
       </Styled.Container>
     </Styled.Main>

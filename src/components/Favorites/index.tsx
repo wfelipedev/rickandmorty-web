@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import { ICharacter } from '../../interfaces'
 import { DefaultLayout } from '../../layouts/Default'
 import { useQuery } from '@apollo/client'
-import * as Styled from './styled'
 import { useMedia } from '../../utils/media'
 import CharracterCard from './Character'
 import { GET_FAVORITES } from '../../graphql/favorite'
+import rick from '../../assets/rick.png'
+import * as Styled from './styles'
 
 export const FavoritesComponent = () => {
   const { data } = useQuery(GET_FAVORITES)
@@ -23,7 +24,7 @@ export const FavoritesComponent = () => {
     <DefaultLayout>
       <Styled.Characters>
         <Styled.CharacterSection>
-          {characters && (
+          {characters && characters.length > 0 ? (
             <Styled.CharacterGrid
               tablet1439={tablet1439}
               tablet1200={tablet1200}
@@ -33,6 +34,12 @@ export const FavoritesComponent = () => {
                 <CharracterCard key={item.char_id} character={item} />
               ))}
             </Styled.CharacterGrid>
+          ) : (
+            <Styled.Empty>
+              <img src={rick} />
+              <h2>Parece que você ainda não tem nenhum personagem favorito!</h2>
+              <a href="/">Voltar para Página Inicial</a>
+            </Styled.Empty>
           )}
         </Styled.CharacterSection>
       </Styled.Characters>

@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Loading from '../layouts/Loading'
+import Signup from '../pages/public/signup'
 import ProtectedRoute from './protected-route'
 
 const SignIn = lazy(() => import('../pages/public/signin'))
@@ -19,7 +20,7 @@ function AppRoutes() {
             element={<Characters title="Rick&Morty | Suflex" />}
           />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignIn />} />
+          <Route path="/signup" element={<Signup />} />
           <Route
             path="/character-details/:id"
             element={

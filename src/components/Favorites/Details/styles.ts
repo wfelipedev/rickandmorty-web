@@ -30,7 +30,7 @@ export const Field = styled.div`
   align-items: center;
   gap: 0.3rem;
 
-  .label {
+  .title {
     color: #333;
   }
 

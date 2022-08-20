@@ -70,3 +70,29 @@ export const CharacterGrid = styled.div<CharacterGridProps>`
   justify-content: center;
   align-items: center;
 `
+export const Empty = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 10%;
+
+  img {
+    height: 350px;
+    width: 350px;
+  }
+
+  h2 {
+    text-align: justify;
+    font-weight: bold;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #333;
+  }
+`

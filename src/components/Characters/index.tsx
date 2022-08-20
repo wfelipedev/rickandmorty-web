@@ -82,9 +82,8 @@ const CharactersComponent = () => {
         </Styled.CharacterSection>
       </Styled.Characters>
       <Styled.Buttons>
-        {/* {characters && characters.length >= 20 && ( */}
         <>
-          {currentPage > 1 && (
+          {characters.length >= 20 && (
             <Button
               className="button-prev"
               disabled={backButton}
@@ -113,7 +112,6 @@ const CharactersComponent = () => {
             </Button>
           )}
         </>
-        {/* )} */}
       </Styled.Buttons>
     </DefaultLayout>
   )
