@@ -3,10 +3,28 @@
 </br>
 
 <p align="center">
-  <a href="#">Description</a> •
-  <a href="#">Tech Stack</a> •
-  <a href="#">Features</a> 
+  <a>Commands</a> •
+  <a>Description</a> •
+  <a>Tech Stack</a> •
+  <a>Features</a> 
 </p>
+
+</br></br>
+
+## ⚡ **Commands**
+
+### Installation
+
+```bash
+$ yarn - will install all the dependencies
+```
+
+### Running the Web Application
+
+```bash
+$ yarn dev - will start the web application
+
+```
 
 </br></br>
 
