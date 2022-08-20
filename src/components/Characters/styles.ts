@@ -63,6 +63,7 @@ export const CharacterSection = styled.div`
 interface CharacterGridProps {
   tablet1439: boolean
   tablet1200: boolean
+  tablet768: boolean
 }
 
 export const CharacterGrid = styled.div<CharacterGridProps>`
@@ -70,11 +71,13 @@ export const CharacterGrid = styled.div<CharacterGridProps>`
   width: 100%;
 
   display: grid;
-  grid-template-columns: ${({ tablet1439, tablet1200 }) =>
-    tablet1439 && !tablet1200
+  grid-template-columns: ${({ tablet1439, tablet1200, tablet768 }) =>
+    tablet1439 && !tablet1200 && !tablet768
       ? '1fr 1fr 1fr'
-      : tablet1200
+      : tablet1200 && !tablet768
       ? '1fr 1fr'
+      : tablet768
+      ? '1fr'
       : '1fr 1fr 1fr 1fr'};
   grid-auto-rows: 1;
   grid-gap: 8px;
@@ -117,3 +120,9 @@ export const Buttons = styled.div`
     font-weight: bold;
   }
 `
+
+// {
+//   if (tablet1439) return '1fr 1fr 1fr'
+//   if (tablet1200) return '1fr 1fr'
+//   if (tablet768) return '1fr'
+// }};

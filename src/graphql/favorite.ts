@@ -22,6 +22,9 @@ export const GET_FAVORITES = gql`
         name
         url
       }
+      episodes {
+        episode
+      }
     }
   }
 `

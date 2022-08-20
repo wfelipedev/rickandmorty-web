@@ -29,6 +29,9 @@ function App() {
             name
             url
           }
+          episodes {
+            episode
+          }
         }
       }
     `,

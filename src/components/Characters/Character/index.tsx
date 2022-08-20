@@ -3,11 +3,11 @@ import { ICharacter } from '../../../interfaces'
 import DetailsModal from '../Details'
 import * as Styled from './styled'
 
-interface CharacterTileProps {
+interface CharracterCardProps {
   character: ICharacter
 }
 
-const CharacterTile = ({ character }: CharacterTileProps) => {
+const CharracterCard = ({ character }: CharracterCardProps) => {
   const [isDetailsVisible, setIsDetailsVisible] = useState<boolean>(false)
 
   const close = () => {
@@ -48,4 +48,4 @@ const CharacterTile = ({ character }: CharacterTileProps) => {
   )
 }
 
-export default CharacterTile
+export default CharracterCard

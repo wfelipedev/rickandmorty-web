@@ -109,6 +109,10 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
             <h3 className="info">{character.species}</h3>
           </Styled.Field>
           <Styled.Field>
+            <h3 className="label">Quantidade de Episodios:</h3>
+            <h3 className="info">{character.episodes?.length}</h3>
+          </Styled.Field>
+          <Styled.Field>
             <h3 className="label">Origem:</h3>{' '}
             <h3 className="info">{character.origin.name}</h3>
           </Styled.Field>
