@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { Layout } from 'antd'
-import './index.css'
+// import './index.css'
 import NavBar from '../../components/Menus/NavBar'
 import * as Styled from './styles'
 

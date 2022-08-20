@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ICharacter } from '../../interfaces/character'
+import { ICharacter } from '../../interfaces'
 import { DefaultLayout } from '../../layouts/Default'
 import { useQuery } from '@apollo/client'
 import * as Styled from './styled'
@@ -8,20 +8,15 @@ import CharacterTile from './Character'
 import { GET_FAVORITES } from '../../graphql/favorite'
 
 export const FavoritesComponent = () => {
-  const { loading, error, data } = useQuery(GET_FAVORITES)
+  const { data } = useQuery(GET_FAVORITES)
   const tablet1439 = useMedia('(max-width: 1439px)')
   const tablet1200 = useMedia('(max-width: 1200px)')
 
   const [characters, setCharacters] = useState<ICharacter[]>([])
 
-  console.log(data)
-
   useEffect(() => {
     setCharacters(data.getFavorites)
   }, [data.getFavorites])
-
-  /*  if (loading) return <div>Carregando...</div>
-  if (error) return <div>{error.message}</div> */
 
   return (
     <DefaultLayout>

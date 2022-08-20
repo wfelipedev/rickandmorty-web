@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ICharacter } from '../../../interfaces/character'
+import { ICharacter } from '../../../interfaces'
 import DetailsModal from '../Details'
 import * as Styled from './styled'
 

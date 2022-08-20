@@ -53,7 +53,7 @@ export const Buttons = styled('div')`
 
     &:hover {
       transition: 0.3s;
-      background: ${transparentize(0.1, '#6d6eab')};
+      background: ${transparentize(0.1, '#ff5252')};
     }
   }
 `

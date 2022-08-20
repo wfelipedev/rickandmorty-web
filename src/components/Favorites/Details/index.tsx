@@ -2,9 +2,8 @@ import { useQuery } from '@apollo/client'
 import { Button, Modal } from 'antd'
 import { format } from 'date-fns'
 import { useEffect, useState } from 'react'
-import { useAuth } from '../../../context/useAuth'
 import { GET_FAVORITES } from '../../../graphql/favorite'
-import { ICharacter } from '../../../interfaces/character'
+import { ICharacter } from '../../../interfaces'
 import { api } from '../../../services/api'
 import { checkErrorProvide } from '../../../utils/checkError'
 import { error as errorToast, success } from '../../../utils/toasts'
@@ -17,8 +16,7 @@ interface IDetailsProps {
 }
 
 const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
-  const { user, isAuthenticated } = useAuth()
-  const { data, refetch, error } = useQuery(GET_FAVORITES)
+  const { data, refetch } = useQuery(GET_FAVORITES)
 
   const [contains, setContains] = useState<boolean>(false)
   const [selectedCharacter, setSelectedCharacter] = useState<ICharacter>()
@@ -74,9 +72,6 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
     }
   }
 
-  console.log('data', data)
-  console.log('error', error)
-
   useEffect(() => {
     if (data) {
       data.getFavorites.map((item: ICharacter) => {
@@ -101,12 +96,27 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
       <Styled.Container>
         <Styled.Image src={character.image} />
         <Styled.CharInfo>
-          <Styled.Field>Nome: {character.name}</Styled.Field>
-          <Styled.Field>Status: {character.status}</Styled.Field>
-          <Styled.Field>Especie: {character.species}</Styled.Field>
-          <Styled.Field>Origem: {character.origin.name}</Styled.Field>
           <Styled.Field>
-            Data de criação: {format(new Date(character.created), 'dd/MM/yyyy')}
+            <h3 className="label">Nome:</h3>
+            <h3 className="info">{character.name}</h3>
+          </Styled.Field>
+          <Styled.Field>
+            <h3 className="label">Status:</h3>{' '}
+            <h3 className="info">{character.status}</h3>
+          </Styled.Field>
+          <Styled.Field>
+            <h3 className="label">Especie:</h3>{' '}
+            <h3 className="info">{character.species}</h3>
+          </Styled.Field>
+          <Styled.Field>
+            <h3 className="label">Origem:</h3>{' '}
+            <h3 className="info">{character.origin.name}</h3>
+          </Styled.Field>
+          <Styled.Field>
+            <h3 className="label">Data de criação:</h3>{' '}
+            <h3 className="info">
+              {format(new Date(character.created), 'dd/MM/yyyy')}
+            </h3>
           </Styled.Field>
         </Styled.CharInfo>
         <Styled.Buttons>

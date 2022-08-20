@@ -1,6 +1,6 @@
 import { Button, Select } from 'antd'
 import { useEffect, useState } from 'react'
-import { ICharacter } from '../../interfaces/character'
+import { ICharacter } from '../../interfaces'
 import { DefaultLayout } from '../../layouts/Default'
 import { useMedia } from '../../utils/media'
 import CharacterTile from './Character'
