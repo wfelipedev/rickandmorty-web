@@ -16,12 +16,12 @@ const CharacterTile = ({ character }: CharacterTileProps) => {
 
   return (
     <>
-      <Styled.Char>
-        <Styled.CharContainer
-          onClick={() => {
-            setIsDetailsVisible(true)
-          }}
-        >
+      <Styled.Char
+        onClick={() => {
+          setIsDetailsVisible(true)
+        }}
+      >
+        <Styled.CharContainer>
           <img
             src={character.image}
             alt="char_image"

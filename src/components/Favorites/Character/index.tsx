@@ -18,7 +18,6 @@ const CharacterTile = ({ character }: CharacterTileProps) => {
     <>
       <Styled.Char
         onClick={() => {
-          console.log('clicked')
           setIsDetailsVisible(true)
         }}
       >

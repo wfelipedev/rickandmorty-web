@@ -4,7 +4,7 @@ import { ICharacter } from '../../interfaces/character'
 import { DefaultLayout } from '../../layouts/Default'
 import { useMedia } from '../../utils/media'
 import CharacterTile from './Character'
-import * as Styled from './styled'
+import * as Styled from './styles'
 
 const { Option } = Select
 
@@ -80,10 +80,12 @@ const CharactersComponent = () => {
         </Styled.CharacterSection>
       </Styled.Characters>
       <Styled.Buttons>
-        {characters && characters.length >= 20 && (
-          <>
+        {/* {characters && characters.length >= 20 && ( */}
+        <>
+          {currentPage > 1 && (
             <Button
-              hidden={backButton}
+              className="button-prev"
+              disabled={backButton}
               onClick={() => {
                 if (currentPage === 2) {
                   setBackButton(true)
@@ -91,9 +93,13 @@ const CharactersComponent = () => {
                 setCurrentPage(currentPage => currentPage - 1)
               }}
             >
-              voltar
+              Anterior
             </Button>
+          )}
+          <div className="current-page">{currentPage}</div>
+          {characters.length >= 20 && (
             <Button
+              className="button-next"
               onClick={() => {
                 if (currentPage >= 1) {
                   setBackButton(false)
@@ -101,10 +107,11 @@ const CharactersComponent = () => {
                 setCurrentPage(currentPage => currentPage + 1)
               }}
             >
-              próximo
+              Próximo
             </Button>
-          </>
-        )}
+          )}
+        </>
+        {/* )} */}
       </Styled.Buttons>
     </DefaultLayout>
   )

@@ -27,7 +27,6 @@ const SignInComponents = () => {
 
   const handleSubmit = useCallback(
     (fields: ICredentials) => {
-      console.log(fields)
       setLoading(true)
       signIn(fields)
       setLoading(false)

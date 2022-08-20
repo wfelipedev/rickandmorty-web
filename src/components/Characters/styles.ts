@@ -47,7 +47,6 @@ export const CtaSearch = styled(AntdButton)`
 export const Characters = styled.div`
   height: 100%;
   padding: 0 3rem;
-  margin: 1.5rem 0;
 
   display: flex;
 `
@@ -92,4 +91,29 @@ export const Buttons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  padding: 1rem;
+
+  .current-page {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .button-prev {
+    background: #f2b66d;
+    border-radius: 0.3rem;
+    border: 0 solid #f2b66d;
+
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .button-next {
+    background: #f28972;
+    border-radius: 0.3rem;
+    border: 0 solid #f28972;
+
+    color: #fff;
+    font-weight: bold;
+  }
 `

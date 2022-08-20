@@ -7,7 +7,7 @@ import { GET_FAVORITES } from '../../../graphql/favorite'
 import { ICharacter } from '../../../interfaces/character'
 import { api } from '../../../services/api'
 import { checkErrorProvide } from '../../../utils/checkError'
-import { error, success } from '../../../utils/toasts'
+import { error as errorToast, success } from '../../../utils/toasts'
 import * as Styled from './styles'
 
 interface IDetailsProps {
@@ -18,7 +18,7 @@ interface IDetailsProps {
 
 const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
   const { user, isAuthenticated } = useAuth()
-  const { data, refetch } = useQuery(GET_FAVORITES)
+  const { data, refetch, error } = useQuery(GET_FAVORITES)
 
   const [contains, setContains] = useState<boolean>(false)
   const [selectedCharacter, setSelectedCharacter] = useState<ICharacter>()
@@ -46,7 +46,6 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
         created: character.created,
       }
 
-      console.log(character)
       const { data } = await api.post('/favorite-char', entity)
 
       success(data.msg)
@@ -55,7 +54,7 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
       setContains(true)
       close()
     } catch (err: any) {
-      error(checkErrorProvide(err))
+      errorToast(checkErrorProvide(err))
     }
   }
 
@@ -71,13 +70,15 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
       setContains(false)
       close()
     } catch (err: any) {
-      error(checkErrorProvide(err))
+      errorToast(checkErrorProvide(err))
     }
   }
 
+  console.log('data', data)
+  console.log('error', error)
+
   useEffect(() => {
-    console.log(user, isAuthenticated)
-    if (user && isAuthenticated) {
+    if (data) {
       data.getFavorites.map((item: ICharacter) => {
         if (item.name === character.name) {
           setSelectedCharacter(item)
@@ -85,7 +86,7 @@ const DetailsModal = ({ isVisible, close, character }: IDetailsProps) => {
         }
       })
     }
-  }, [character.name, data.getFavorites, isAuthenticated, user])
+  }, [character.name, data])
 
   return (
     <Modal

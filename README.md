@@ -3,9 +3,9 @@
 </br>
 
 <p align="center">
-  <a href="#blush-why">Description</a> •
-  <a href="#zap-tech-stack">Tech Stack</a> •
-  <a href="#zap-tech-stack">Features</a> 
+  <a href="#">Description</a> •
+  <a href="#">Tech Stack</a> •
+  <a href="#">Features</a> 
 </p>
 
 </br></br>

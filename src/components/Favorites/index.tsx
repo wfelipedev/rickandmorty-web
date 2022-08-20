@@ -1,36 +1,11 @@
 import { useEffect, useState } from 'react'
 import { ICharacter } from '../../interfaces/character'
 import { DefaultLayout } from '../../layouts/Default'
-import { useQuery, gql } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import * as Styled from './styled'
 import { useMedia } from '../../utils/media'
 import CharacterTile from './Character'
-
-const GET_FAVORITES = gql`
-  query GetFavorites {
-    getFavorites {
-      id
-      char_id
-      name
-      status
-      species
-      type
-      gender
-      image
-      url
-      created
-      created_at
-      origin {
-        name
-        url
-      }
-      location {
-        name
-        url
-      }
-    }
-  }
-`
+import { GET_FAVORITES } from '../../graphql/favorite'
 
 export const FavoritesComponent = () => {
   const { loading, error, data } = useQuery(GET_FAVORITES)
@@ -39,12 +14,14 @@ export const FavoritesComponent = () => {
 
   const [characters, setCharacters] = useState<ICharacter[]>([])
 
+  console.log(data)
+
   useEffect(() => {
     setCharacters(data.getFavorites)
   }, [data.getFavorites])
 
-  if (loading) return <div>Carregando...</div>
-  if (error) return <div>{error.message}</div>
+  /*  if (loading) return <div>Carregando...</div>
+  if (error) return <div>{error.message}</div> */
 
   return (
     <DefaultLayout>

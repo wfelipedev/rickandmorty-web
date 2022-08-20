@@ -134,34 +134,3 @@ export const Button = styled(AntdButton)`
     border: 0px solid;
   }
 `
-
-/* export const Button = styled(MuiLoadingButton)`
-  height: 3.5rem;
-  width: 100%;
-  margin: 1.5rem 0;
-
-  background: teal;
-  color: white;
-
-  font-weight: bold;
-
-  border: none;
-  border-radius: 0.3rem;
-
-  text-transform: none;
-
-  cursor: pointer;
-  transition: 0.3s;
-
-  .progress {
-    color: #fff;
-  }
-
-  &:hover {
-    transition: 0.3s;
-    background: ${transparentize(0.1, 'teal')};
-
-    color: white;
-    border: 0px solid;
-  }
-` */
